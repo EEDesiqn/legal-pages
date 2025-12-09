@@ -9,16 +9,12 @@
   <!-- Ubuntu fontu -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg-main: #000000;
       --bg-card: #111111;
-      --bg-card-soft: #181818;
       --text-main: #ffffff;
       --text-muted: #c2c2c2;
       --accent: #ffcc00;
@@ -26,38 +22,21 @@
       --max-width: 860px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
       background: radial-gradient(circle at top, #1e1e1e 0, #000000 55%);
       color: var(--text-main);
-      font-family: "Ubuntu", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Ubuntu", system-ui, sans-serif;
       line-height: 1.6;
     }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(12px);
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+      background: rgba(0,0,0,0.8);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -70,7 +49,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .brand {
@@ -80,11 +58,11 @@
     }
 
     .brand-logo {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff, #ffcc00);
-      box-shadow: 0 0 18px rgba(255, 204, 0, 0.45);
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.45);
     }
 
     .brand-text-main {
@@ -103,29 +81,24 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .pill-link {
       padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255,255,255,0.18);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10,10,10,0.9);
     }
 
     .pill-link--active {
       border-color: var(--accent);
-      color: #000;
+      color: black;
       background: linear-gradient(135deg, #ffcc00, #ffe766);
       font-weight: 700;
-    }
-
-    main {
-      flex: 1;
     }
 
     .page {
@@ -134,108 +107,22 @@
       padding: 22px 18px 38px;
     }
 
-    .page-header {
-      margin-bottom: 18px;
-    }
-
-    .page-kicker {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .page-title {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin: 0 0 6px;
-    }
-
-    .page-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
     .card {
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.02),
-        rgba(255, 255, 255, 0.01)
-      );
+      background: rgba(255,255,255,0.02);
       border-radius: 18px;
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-      padding: 22px 18px 20px;
-      backdrop-filter: blur(18px);
+      padding: 22px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
     }
 
-    .toc {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .toc-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .toc-list {
-      font-size: 13px;
-      padding-left: 16px;
-      margin: 0;
-      color: var(--text-muted);
-    }
-
-    .section {
-      margin-top: 18px;
-      padding-top: 10px;
-    }
-
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0 0 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .section-index {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      opacity: 0.9;
-    }
-
-    p {
-      margin: 4px 0 8px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    ul {
-      margin: 4px 0 8px 18px;
-      padding: 0;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    li {
-      margin-bottom: 4px;
-    }
-
-    strong {
-      color: #f3f3f3;
-    }
+    h1 { font-size: 26px; margin-bottom: 6px; }
+    h2 { font-size: 17px; }
+    p, ul { color: var(--text-muted); font-size: 14px; }
+    ul { padding-left: 18px; }
+    strong { color: white; }
 
     footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
       margin-top: 18px;
     }
 
@@ -246,29 +133,23 @@
       font-size: 11px;
       color: var(--text-muted);
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .footer-inner span {
-      opacity: 0.8;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <div class="topbar">
       <div class="brand">
-        <div class="brand-logo" aria-hidden="true"></div>
+        <img class="brand-logo" src="https://i.ibb.co/RGGH0PL1/eecine-logo.png" alt="EECINE Logo">
         <div>
           <div class="brand-text-main">EECINE</div>
           <div class="brand-text-sub">Film &amp; Dizi Takipçisi</div>
         </div>
       </div>
-      <nav class="pill-nav" aria-label="Sayfa gezinme">
+
+      <nav class="pill-nav">
         <a class="pill-link" href="/privacy.html">Gizlilik Politikası</a>
         <span class="pill-link pill-link--active">Kullanım Şartları</span>
       </nav>
@@ -277,155 +158,69 @@
 
   <main>
     <div class="page">
-      <header class="page-header">
-        <div class="page-kicker">Yasal &amp; Kullanım</div>
-        <h1 class="page-title">Kullanım Şartları</h1>
-        <div class="page-meta">
-          <span>Uygulama: <strong>EECINE</strong></span><br />
-          <span>Geliştirici: <strong>EEDesiqn</strong></span><br />
-        </div>
-      </header>
+      <h1>Kullanım Şartları</h1>
+      <p><strong>EECINE</strong> uygulamasını kullanarak bu şartları kabul etmiş olursunuz.</p>
 
       <article class="card">
-        <section class="toc">
-          <div class="toc-title">İçindekiler</div>
-          <ol class="toc-list">
-            <li><a href="#tanımlar">Tanımlar</a></li>
-            <li><a href="#kullanim-kosullari">Uygulamanın Kullanım Koşulları</a></li>
-            <li><a href="#hesap">Hesap ve Güvenlik</a></li>
-            <li><a href="#icerik-telif">İçerik ve Telif Hakları</a></li>
-            <li><a href="#kabul-edilemeyen-kullanim">Kabul Edilemeyen Kullanımlar</a></li>
-            <li><a href="#degisiklik-ve-sonlandirma">Hizmette Değişiklik ve Sonlandırma</a></li>
-            <li><a href="#sorumluluk-reddi">Sorumluluk Reddi</a></li>
-            <li><a href="#degisiklikler">Şartlardaki Değişiklikler</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-          </ol>
-        </section>
 
-        <section id="tanımlar" class="section">
-          <h2 class="section-title">
-            <span class="section-index">01</span>
-            <span>Tanımlar</span>
-          </h2>
-          <p>Bu Kullanım Şartları’nda:</p>
-          <ul>
-            <li><strong>“Uygulama”</strong>, EECINE adlı mobil uygulamayı;</li>
-            <li><strong>“Hizmet”</strong>, uygulama içerisindeki film ve dizi takip işlevlerini;</li>
-            <li><strong>“Kullanıcı”</strong>, uygulamayı kullanan gerçek kişiyi ifade eder.</li>
-          </ul>
-        </section>
+        <h2>1. Tanımlar</h2>
+        <ul>
+          <li><strong>Uygulama:</strong> EECINE mobil uygulaması.</li>
+          <li><strong>Hizmet:</strong> Film & dizi takip özellikleri.</li>
+          <li><strong>Kullanıcı:</strong> Uygulamayı kullanan kişi.</li>
+        </ul>
 
-        <section id="kullanim-kosullari" class="section">
-          <h2 class="section-title">
-            <span class="section-index">02</span>
-            <span>Uygulamanın Kullanım Koşulları</span>
-          </h2>
-          <p>
-            Uygulamayı indirerek, kurarak veya kullanarak bu Kullanım Şartları’nı okuduğunuzu
-            ve kabul ettiğinizi beyan etmiş olursunuz.
-          </p>
-          <ul>
-            <li>Uygulamayı yalnızca yürürlükteki yasalara uygun biçimde kullanabilirsiniz.</li>
-            <li>Uygulama genellikle yetişkin kullanıcıları hedefler.</li>
-            <li>Belirli özellikler hesap oluşturmayı gerektirebilir.</li>
-          </ul>
-        </section>
+        <h2>2. Kullanım Koşulları</h2>
+        <p>Uygulamayı kullanarak bu koşulları kabul etmiş olursunuz.</p>
 
-        <section id="hesap" class="section">
-          <h2 class="section-title">
-            <span class="section-index">03</span>
-            <span>Hesap ve Güvenlik</span>
-          </h2>
-          <p>Uygulamada Google hesabınız veya e-postanız ile giriş yapabilirsiniz.</p>
-          <ul>
-            <li>Hesap bilgilerinizin güvenliğinden siz sorumlusunuz.</li>
-            <li>Hesabınız üzerinden yapılan işlemlerden siz sorumlu tutulabilirsiniz.</li>
-            <li>Şüpheli bir durum fark ederseniz bizimle iletişime geçmeniz önerilir.</li>
-          </ul>
-        </section>
+        <ul>
+          <li>Uygulamayı yalnızca yasal amaçlarla kullanabilirsiniz.</li>
+          <li>Belirli özellikler giriş yapmayı gerektirebilir.</li>
+        </ul>
 
-        <section id="icerik-telif" class="section">
-          <h2 class="section-title">
-            <span class="section-index">04</span>
-            <span>İçerik ve Telif Hakları</span>
-          </h2>
-          <p>
-            Uygulamada gösterilen film ve dizi bilgileri ilgili hak sahiplerine aittir.
-            EECINE bu içerikler üzerinde herhangi bir mülkiyet iddiasında bulunmaz.
-          </p>
-          <ul>
-            <li>Veriler The Movie Database (TMDb) API üzerinden alınır.</li>
-            <li>TMDb, EECINE’in sponsoru veya resmi ortağı değildir.</li>
-            <li>Telif haklarını ihlal edecek şekilde paylaşım kullanıcı sorumluluğundadır.</li>
-          </ul>
-        </section>
+        <h2>3. Hesap Güvenliği</h2>
+        <ul>
+          <li>Hesap bilgilerinizden siz sorumlusunuz.</li>
+          <li>Şüpheli durumlarda geliştirici ile iletişime geçebilirsiniz.</li>
+        </ul>
 
-        <section id="kabul-edilemeyen-kullanim" class="section">
-          <h2 class="section-title">
-            <span class="section-index">05</span>
-            <span>Kabul Edilemeyen Kullanımlar</span>
-          </h2>
-          <p>Aşağıdaki davranışlar yasaktır:</p>
-          <ul>
-            <li>Yasa dışı, tehdit edici, hakaret içeren içerikler paylaşmak</li>
-            <li>Uygulamanın güvenliğini ihlal etmeye çalışmak</li>
-            <li>Spam davranışları</li>
-            <li>Başka hesaplara izinsiz erişim sağlamak</li>
-          </ul>
-        </section>
+        <h2>4. İçerik ve Telif Hakları</h2>
+        <ul>
+          <li>
+            Film & dizi verileri üçüncü taraf olan
+            <strong>TMDb API</strong> üzerinden sağlanır.
+          </li>
+          <li>TMDb, EECINE’in sponsoru veya ortağı değildir.</li>
+        </ul>
 
-        <section id="degisiklik-ve-sonlandirma" class="section">
-          <h2 class="section-title">
-            <span class="section-index">06</span>
-            <span>Hizmette Değişiklik ve Sonlandırma</span>
-          </h2>
-          <p>
-            <strong>EEDesiqn</strong>, gerekli gördüğü durumlarda uygulamayı veya hizmeti
-            durdurma ya da değiştirme hakkını saklı tutar.
-          </p>
-          <p>Kullanıcı dilediği zaman uygulamayı kaldırarak hizmeti bırakabilir.</p>
-        </section>
+        <h2>5. Kabul Edilemeyen Kullanımlar</h2>
+        <ul>
+          <li>Yasadışı içerik paylaşmak</li>
+          <li>Sisteme yetkisiz erişim sağlamak</li>
+          <li>Spam davranışları</li>
+        </ul>
 
-        <section id="sorumluluk-reddi" class="section">
-          <h2 class="section-title">
-            <span class="section-index">07</span>
-            <span>Sorumluluk Reddi</span>
-          </h2>
-          <p>
-            Uygulama “olduğu gibi” sunulmaktadır. Belirli bir amaca uygunluk veya kesintisizlik
-            konusunda hiçbir garanti verilmez.
-          </p>
-          <p>
-            Kullanım nedeniyle oluşan veri kaybı, maddi zarar, doğrudan veya dolaylı
-            sonuçlardan <strong>EEDesiqn</strong> sorumlu tutulamaz.
-          </p>
-        </section>
+        <h2>6. Hizmette Değişiklik</h2>
+        <p>
+          <strong>EEDesiqn</strong>, hizmeti değiştirme veya sonlandırma hakkını saklı tutar.
+        </p>
 
-        <section id="degisiklikler" class="section">
-          <h2 class="section-title">
-            <span class="section-index">08</span>
-            <span>Şartlardaki Değişiklikler</span>
-          </h2>
-          <p>
-            Bu Kullanım Şartları zaman zaman güncellenebilir. Güncel sürüm her zaman
-            <strong>https://www.eedesiqn.online/terms</strong>
-            adresinde yayınlanacaktır.
-          </p>
-        </section>
+        <h2>7. Sorumluluk Reddi</h2>
+        <p>Uygulama “olduğu gibi” sunulur. Kesintisizlik garanti edilmez.</p>
 
-        <section id="iletisim" class="section">
-          <h2 class="section-title">
-            <span class="section-index">09</span>
-            <span>İletişim</span>
-          </h2>
-          <p>
-            Sorularınız için bizimle iletişime geçebilirsiniz:
-          </p>
-          <p>
-            E-posta: <a href="mailto:eedesiqn@gmail.com">eedesiqn@gmail.com</a><br />
-            Web: <a href="https://www.eedesiqn.online" target="_blank" rel="noopener">www.eedesiqn.online</a>
-          </p>
-        </section>
+        <h2>8. Değişiklikler</h2>
+        <p>
+          Güncel şartlar her zaman
+          <strong>https://www.eedesiqn.online/terms</strong>
+          adresinde bulunur.
+        </p>
+
+        <h2>9. İletişim</h2>
+        <p>
+          E-posta:
+          <a href="mailto:eedesiqn@gmail.com">eedesiqn@gmail.com</a><br>
+          Web: <a href="https://www.eedesiqn.online">www.eedesiqn.online</a>
+        </p>
       </article>
     </div>
   </main>
@@ -433,13 +228,12 @@
   <footer>
     <div class="footer-inner">
       <span>© <span id="year"></span> EEDesiqn. Tüm hakları saklıdır.</span>
-      <span>Bu sayfa bilgilendirme amaçlıdır.</span>
+      <span>Bilgilendirme amaçlıdır.</span>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
