@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>EECINE – Gizlilik Politikası</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="EECINE mobil uygulaması için Gizlilik Politikası." />
+
+  <!-- TODO: İstersen kendi favicon'unu ekle -->
+  <!-- <link rel="icon" href="/favicon.ico" /> -->
+
+  <!-- Ubuntu fontu (uygulamayla uyumlu) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-main: #000000;
+      --bg-card: #111111;
+      --bg-card-soft: #181818;
+      --text-main: #ffffff;
+      --text-muted: #c2c2c2;
+      --accent: #ffcc00;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --max-width: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #1e1e1e 0, #000000 55%);
+      color: var(--text-main);
+      font-family: "Ubuntu", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #ffcc00);
+      box-shadow: 0 0 18px rgba(255, 204, 0, 0.45);
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .pill-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill-link {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      background: rgba(10, 10, 10, 0.9);
+    }
+
+    .pill-link--active {
+      border-color: var(--accent);
+      color: #000;
+      background: linear-gradient(135deg, #ffcc00, #ffe766);
+      font-weight: 700;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 18px 38px;
+    }
+
+    .page-header {
+      margin-bottom: 18px;
+    }
+
+    .page-kicker {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+
+    .page-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.01)
+      );
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      padding: 22px 18px 20px;
+      backdrop-filter: blur(18px);
+    }
+
+    .toc {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .toc-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .toc-list {
+      font-size: 13px;
+      padding-left: 16px;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .section {
+      margin-top: 18px;
+      padding-top: 10px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-index {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    p {
+      margin: 4px 0 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    ul {
+      margin: 4px 0 8px 18px;
+      padding: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    strong {
+      color: #f3f3f3;
+    }
+
+    code {
+      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 18px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 18px 22px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-inner span {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        padding-inline: 14px;
+      }
+
+      .page {
+        padding-inline: 14px;
+      }
+
+      .page-title {
+        font-size: 22px;
+      }
+
+      .card {
+        padding-inline: 14px;
+      }
+
+      .pill-nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    TODO:
+    [GELISTIRICI_ADI]      : Geliştirici / kişi veya şirket adı
+    [ILETISIM_EMAILI]      : İletişim e-posta adresin
+    [ALAN_ADIN]            : Örn. https://eecine.com
+    [SON_GUNCELLEME_TARIHI]: Örn. 10 Aralık 2025
+  -->
+
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-text-main">EECINE</div>
+          <div class="brand-text-sub">Film &amp; Dizi Takipçisi</div>
+        </div>
+      </div>
+      <nav class="pill-nav" aria-label="Sayfa gezinme">
+        <span class="pill-link pill-link--active">Gizlilik Politikası</span>
+        <a class="pill-link" href="/kullanim-sartlari.html">Kullanım Şartları</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page">
+      <header class="page-header">
+        <div class="page-kicker">Yasal &amp; Güvenlik</div>
+        <h1 class="page-title">Gizlilik Politikası</h1>
+        <div class="page-meta">
+          <span>Uygulama: <strong>EECINE</strong></span><br />
+          <span>Geliştirici: <strong>[GELISTIRICI_ADI]</strong></span><br />
+          <span>Son güncelleme: <strong>[SON_GUNCELLEME_TARIHI]</strong></span>
+        </div>
+      </header>
+
+      <article class="card">
+        <section class="toc">
+          <div class="toc-title">İçindekiler</div>
+          <ol class="toc-list">
+            <li><a href="#giris">Giriş</a></li>
+            <li><a href="#toplanan-veriler">Toplanan Veriler</a></li>
+            <li><a href="#kullanim-amaclari">Verilerin Kullanım Amaçları</a></li>
+            <li><a href="#ucuncu-taraflar">Üçüncü Taraf Hizmetler</a></li>
+            <li><a href="#saklama-suresi">Verilerin Saklanma Süresi</a></li>
+            <li><a href="#guvenlik">Güvenlik</a></li>
+            <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
+            <li><a href="#degisiklikler">Politikadaki Değişiklikler</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ol>
+        </section>
+
+        <section id="giris" class="section">
+          <h2 class="section-title">
+            <span class="section-index">01</span>
+            <span>Giriş</span>
+          </h2>
+          <p>
+            Bu Gizlilik Politikası, <strong>EECINE</strong> (“Uygulama”) ve
+            <strong>[GELISTIRICI_ADI]</strong> (“biz”) tarafından sunulan hizmetleri
+            kullanırken kişisel verilerinizin nasıl işlendiğini açıklar.
+          </p>
+          <p>
+            Uygulamayı kullanarak, bu Gizlilik Politikası’nda açıklanan veri işleme
+            süreçlerini okuduğunuzu ve kabul ettiğinizi beyan etmiş olursunuz.
+          </p>
+        </section>
+
+        <section id="toplanan-veriler" class="section">
+          <h2 class="section-title">
+            <span class="section-index">02</span>
+            <span>Toplanan Veriler</span>
+          </h2>
+          <p>Uygulama kapsamında aşağıdaki veri türleri işlenebilir:</p>
+          <ul>
+            <li>
+              <strong>Hesap bilgileri</strong><br />
+              • E-posta adresi<br />
+              • Google ile giriş yapmanız halinde Google hesabınıza ait temel profil bilgileri
+              (örneğin adınız ve profil resminiz) – yalnızca kimlik doğrulama amacıyla.
+            </li>
+            <li>
+              <strong>Uygulama içi veriler</strong><br />
+              • “İzledim” listenizdeki film ve diziler<br />
+              • “Daha sonra izle” listeniz<br />
+              • Verdiğiniz puanlar ve notlar (varsa)
+            </li>
+            <li>
+              <strong>Teknik veriler</strong><br />
+              • Kullanılan cihaz ve işletim sistemi bilgileri (Android sürümü vb.)<br />
+              • Bildirim gönderimi için kullanılan cihaz tanımlayıcıları
+              (örn. Firebase Cloud Messaging token’ı)
+            </li>
+            <li>
+              <strong>Çerez benzeri mekanizmalar</strong><br />
+              • EECINE doğrudan klasik web çerezleri kullanmasa da, Firebase ve benzeri
+                servislerin kendi teknik tanımlayıcıları bulunabilir.
+            </li>
+          </ul>
+        </section>
+
+        <section id="kullanim-amaclari" class="section">
+          <h2 class="section-title">
+            <span class="section-index">03</span>
+            <span>Verilerin Kullanım Amaçları</span>
+          </h2>
+          <p>Toplanan veriler aşağıdaki amaçlarla kullanılır:</p>
+          <ul>
+            <li>
+              Hesabınızla güvenli bir şekilde giriş yapabilmeniz ve verilerinizin (watchlist,
+              “daha sonra izle” vb.) cihazlarınız arasında senkronize edilebilmesi
+            </li>
+            <li>
+              İzlediğiniz içerikleri listeleyebilmeniz, puanlayabilmeniz ve geçmişinizi
+              yönetebilmeniz
+            </li>
+            <li>
+              Uygulama deneyiminin iyileştirilmesi, hataların tespiti ve giderilmesi
+            </li>
+            <li>
+              İsteğe bağlı bildirimlerin gönderilmesi (örneğin yeni özellik duyuruları vb.)
+            </li>
+          </ul>
+          <p>
+            Verilerinizi <strong>satmayız</strong> ve izniniz olmadan üçüncü taraflara
+            <strong>pazarlama amacıyla</strong> aktarmayız.
+          </p>
+        </section>
+
+        <section id="ucuncu-taraflar" class="section">
+          <h2 class="section-title">
+            <span class="section-index">04</span>
+            <span>Üçüncü Taraf Hizmetler</span>
+          </h2>
+          <p>Uygulama, bazı işlevler için üçüncü taraf hizmetlerden yararlanır:</p>
+          <ul>
+            <li>
+              <strong>Google Firebase</strong><br />
+              • <em>Firebase Authentication</em>: Hesap oluşturma ve kimlik doğrulama.<br />
+              • <em>Cloud Firestore</em>: Watchlist ve benzeri verilerin güvenli şekilde
+                saklanması.<br />
+              • <em>Firebase Cloud Messaging (FCM)</em>: Bildirimlerin iletilmesi.
+            </li>
+            <li>
+              <strong>The Movie Database (TMDb) API</strong><br />
+              • Film ve dizi bilgileri, posterler ve benzeri içerik TMDb üzerinden
+                alınmaktadır.<br />
+              • TMDb, EECINE uygulamasının sponsoru veya resmi ortağı değildir. TMDb verileri,
+                TMDb’nin kendi kullanım şartları ve gizlilik politikasına tabidir.
+            </li>
+          </ul>
+          <p>
+            Bu hizmetler, kendi gizlilik politikalarına göre veri işleyebilir. Detaylı bilgi
+            için ilgili servislerin resmi web sitelerine başvurabilirsiniz.
+          </p>
+        </section>
+
+        <section id="saklama-suresi" class="section">
+          <h2 class="section-title">
+            <span class="section-index">05</span>
+            <span>Verilerin Saklanma Süresi</span>
+          </h2>
+          <p>
+            Hesabınız aktif olduğu sürece, watchlist ve benzeri uygulama içi verileriniz
+            Firestore üzerinde saklanmaya devam eder.
+          </p>
+          <p>
+            Hesabınızın ve/veya verilerinizin tamamen silinmesini talep etmek isterseniz,
+            <strong>[ILETISIM_EMAILI]</strong> adresi üzerinden bizimle iletişime
+            geçebilirsiniz. Makul süre içerisinde talebiniz değerlendirilerek verileriniz
+            silinir veya anonimleştirilir.
+          </p>
+          <p>
+            Yasal yükümlülüklerimiz gereği bazı kayıtlar, ilgili mevzuatta öngörülen süreler
+            boyunca saklanmaya devam edebilir.
+          </p>
+        </section>
+
+        <section id="guvenlik" class="section">
+          <h2 class="section-title">
+            <span class="section-index">06</span>
+            <span>Güvenlik</span>
+          </h2>
+          <p>
+            Verileriniz, Firebase altyapısında saklanmakta olup yetkisiz erişime karşı
+            korunması için uygun teknik ve idari tedbirler alınmaktadır. İlgili erişim
+            kontrolleri, yalnızca kimliği doğrulanmış kullanıcılar ve uygulama tarafından
+            yetkilendirilmiş işlemlerle sınırlıdır.
+          </p>
+          <p>
+            Ancak internet üzerinden yapılan hiçbir veri aktarımının veya depolama yönteminin
+            tamamen güvenli olduğu garanti edilemez. Tüm makul önlemleri almaya özen
+            göstermekle birlikte, mutlak güvenlik taahhüdünde bulunamayız.
+          </p>
+        </section>
+
+        <section id="cocuklar" class="section">
+          <h2 class="section-title">
+            <span class="section-index">07</span>
+            <span>Çocukların Gizliliği</span>
+          </h2>
+          <p>
+            Uygulama, ağırlıklı olarak yetişkin kullanıcıları hedeflemek üzere
+            tasarlanmıştır ve çocuklara yönelik özel bir sürüm sunmamaktadır.
+          </p>
+          <p>
+            Çocuğunuzun izniniz olmadan uygulamayı kullandığını veya kişisel verilerini
+            paylaştığını düşünüyorsanız, lütfen en kısa sürede
+            <strong>[ILETISIM_EMAILI]</strong> adresi üzerinden bizimle iletişime
+            geçin. İlgili hesabın ve verilerin silinmesi için gerekli adımlar atılacaktır.
+          </p>
+        </section>
+
+        <section id="degisiklikler" class="section">
+          <h2 class="section-title">
+            <span class="section-index">08</span>
+            <span>Bu Politikadaki Değişiklikler</span>
+          </h2>
+          <p>
+            Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm her zaman bu
+            sayfada (<strong>[ALAN_ADIN]/gizlilik-politikasi.html</strong>) yayınlanacaktır.
+          </p>
+          <p>
+            Önemli değişiklikler yapılması halinde, uygun görülen durumlarda uygulama içi
+            bildirim veya e-posta yoluyla da bilgilendirme yapılabilir.
+          </p>
+        </section>
+
+        <section id="iletisim" class="section">
+          <h2 class="section-title">
+            <span class="section-index">09</span>
+            <span>İletişim</span>
+          </h2>
+          <p>
+            Bu Gizlilik Politikası ile ilgili her türlü soru, görüş ve talepleriniz için
+            bizimle iletişime geçebilirsiniz:
+          </p>
+          <p>
+            E-posta: <a href="mailto:[ILETISIM_EMAILI]">[ILETISIM_EMAILI]</a><br />
+            Web: <a href="[ALAN_ADIN]" target="_blank" rel="noopener">[ALAN_ADIN]</a>
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> [GELISTIRICI_ADI]. Tüm hakları saklıdır.</span>
+      <span>Bu sayfa sadece bilgilendirme amaçlıdır.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
