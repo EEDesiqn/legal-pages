@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="EECINE mobil uygulaması için Gizlilik Politikası." />
 
-  <!-- TODO: İstersen kendi favicon'unu ekle -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
-
-  <!-- Ubuntu fontu (uygulamayla uyumlu) -->
+  <!-- Ubuntu fontu -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -106,7 +103,6 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .pill-link {
@@ -175,26 +171,6 @@
       backdrop-filter: blur(18px);
     }
 
-    .toc {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .toc-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .toc-list {
-      font-size: 13px;
-      padding-left: 16px;
-      margin: 0;
-      color: var(--text-muted);
-    }
-
     .section {
       margin-top: 18px;
       padding-top: 10px;
@@ -237,14 +213,6 @@
       color: #f3f3f3;
     }
 
-    code {
-      font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 13px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
-
     footer {
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       margin-top: 18px;
@@ -266,38 +234,9 @@
     .footer-inner span {
       opacity: 0.8;
     }
-
-    @media (max-width: 640px) {
-      .topbar {
-        padding-inline: 14px;
-      }
-
-      .page {
-        padding-inline: 14px;
-      }
-
-      .page-title {
-        font-size: 22px;
-      }
-
-      .card {
-        padding-inline: 14px;
-      }
-
-      .pill-nav {
-        justify-content: flex-start;
-      }
-    }
   </style>
 </head>
 <body>
-  <!--
-    TODO:
-    [GELISTIRICI_ADI]      : Geliştirici / kişi veya şirket adı
-    [ILETISIM_EMAILI]      : İletişim e-posta adresin
-    [ALAN_ADIN]            : Örn. https://eecine.com
-    [SON_GUNCELLEME_TARIHI]: Örn. 10 Aralık 2025
-  -->
 
   <header>
     <div class="topbar">
@@ -310,7 +249,7 @@
       </div>
       <nav class="pill-nav" aria-label="Sayfa gezinme">
         <span class="pill-link pill-link--active">Gizlilik Politikası</span>
-        <a class="pill-link" href="/kullanim-sartlari.html">Kullanım Şartları</a>
+        <a class="pill-link" href="/terms.html">Kullanım Şartları</a>
       </nav>
     </div>
   </header>
@@ -318,234 +257,146 @@
   <main>
     <div class="page">
       <header class="page-header">
-        <div class="page-kicker">Yasal &amp; Güvenlik</div>
+        <div class="page-kicker">Gizlilik &amp; Koruma</div>
         <h1 class="page-title">Gizlilik Politikası</h1>
         <div class="page-meta">
           <span>Uygulama: <strong>EECINE</strong></span><br />
-          <span>Geliştirici: <strong>[GELISTIRICI_ADI]</strong></span><br />
-          <span>Son güncelleme: <strong>[SON_GUNCELLEME_TARIHI]</strong></span>
+          <span>Geliştirici: <strong>EEDesiqn</strong></span><br />
         </div>
       </header>
 
       <article class="card">
-        <section class="toc">
-          <div class="toc-title">İçindekiler</div>
-          <ol class="toc-list">
-            <li><a href="#giris">Giriş</a></li>
-            <li><a href="#toplanan-veriler">Toplanan Veriler</a></li>
-            <li><a href="#kullanim-amaclari">Verilerin Kullanım Amaçları</a></li>
-            <li><a href="#ucuncu-taraflar">Üçüncü Taraf Hizmetler</a></li>
-            <li><a href="#saklama-suresi">Verilerin Saklanma Süresi</a></li>
-            <li><a href="#guvenlik">Güvenlik</a></li>
-            <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
-            <li><a href="#degisiklikler">Politikadaki Değişiklikler</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-          </ol>
-        </section>
 
-        <section id="giris" class="section">
+        <section class="section" id="1">
           <h2 class="section-title">
             <span class="section-index">01</span>
-            <span>Giriş</span>
+            <span>Toplanan Bilgiler</span>
           </h2>
-          <p>
-            Bu Gizlilik Politikası, <strong>EECINE</strong> (“Uygulama”) ve
-            <strong>[GELISTIRICI_ADI]</strong> (“biz”) tarafından sunulan hizmetleri
-            kullanırken kişisel verilerinizin nasıl işlendiğini açıklar.
-          </p>
-          <p>
-            Uygulamayı kullanarak, bu Gizlilik Politikası’nda açıklanan veri işleme
-            süreçlerini okuduğunuzu ve kabul ettiğinizi beyan etmiş olursunuz.
-          </p>
-        </section>
-
-        <section id="toplanan-veriler" class="section">
-          <h2 class="section-title">
-            <span class="section-index">02</span>
-            <span>Toplanan Veriler</span>
-          </h2>
-          <p>Uygulama kapsamında aşağıdaki veri türleri işlenebilir:</p>
+          <p>EECINE, kullanıcı deneyimini geliştirmek ve hizmeti sağlayabilmek için bazı verileri toplar.</p>
           <ul>
-            <li>
-              <strong>Hesap bilgileri</strong><br />
-              • E-posta adresi<br />
-              • Google ile giriş yapmanız halinde Google hesabınıza ait temel profil bilgileri
-              (örneğin adınız ve profil resminiz) – yalnızca kimlik doğrulama amacıyla.
-            </li>
-            <li>
-              <strong>Uygulama içi veriler</strong><br />
-              • “İzledim” listenizdeki film ve diziler<br />
-              • “Daha sonra izle” listeniz<br />
-              • Verdiğiniz puanlar ve notlar (varsa)
-            </li>
-            <li>
-              <strong>Teknik veriler</strong><br />
-              • Kullanılan cihaz ve işletim sistemi bilgileri (Android sürümü vb.)<br />
-              • Bildirim gönderimi için kullanılan cihaz tanımlayıcıları
-              (örn. Firebase Cloud Messaging token’ı)
-            </li>
-            <li>
-              <strong>Çerez benzeri mekanizmalar</strong><br />
-              • EECINE doğrudan klasik web çerezleri kullanmasa da, Firebase ve benzeri
-                servislerin kendi teknik tanımlayıcıları bulunabilir.
-            </li>
+            <li><strong>Hesap bilgileri:</strong> Google hesabı veya e-posta ile giriş bilgileri</li>
+            <li><strong>Cihaz bilgileri:</strong> cihaz modeli, işletim sistemi, uygulama sürümü</li>
+            <li><strong>Kullanım verileri:</strong> favori filmleriniz, izleme listeleri, uygulama içinde gezinti</li>
+            <li><strong>IP ve teknik bilgiler:</strong> güvenlik, hata ayıklama ve analitik amaçlı</li>
           </ul>
         </section>
 
-        <section id="kullanim-amaclari" class="section">
+        <section class="section" id="2">
           <h2 class="section-title">
-            <span class="section-index">03</span>
+            <span class="section-index">02</span>
             <span>Verilerin Kullanım Amaçları</span>
           </h2>
           <p>Toplanan veriler aşağıdaki amaçlarla kullanılır:</p>
           <ul>
-            <li>
-              Hesabınızla güvenli bir şekilde giriş yapabilmeniz ve verilerinizin (watchlist,
-              “daha sonra izle” vb.) cihazlarınız arasında senkronize edilebilmesi
-            </li>
-            <li>
-              İzlediğiniz içerikleri listeleyebilmeniz, puanlayabilmeniz ve geçmişinizi
-              yönetebilmeniz
-            </li>
-            <li>
-              Uygulama deneyiminin iyileştirilmesi, hataların tespiti ve giderilmesi
-            </li>
-            <li>
-              İsteğe bağlı bildirimlerin gönderilmesi (örneğin yeni özellik duyuruları vb.)
-            </li>
+            <li>Uygulamanın doğru şekilde çalışmasını sağlamak</li>
+            <li>Kullanıcıya kişiselleştirilmiş içerik göstermek</li>
+            <li>Geliştirme, güvenlik ve hata ayıklama süreçlerini yürütmek</li>
+            <li>Kullanıcı desteği sağlamak</li>
           </ul>
+        </section>
+
+        <section class="section" id="3">
+          <h2 class="section-title">
+            <span class="section-index">03</span>
+            <span>Çerezler ve Benzeri Teknolojiler</span>
+          </h2>
           <p>
-            Verilerinizi <strong>satmayız</strong> ve izniniz olmadan üçüncü taraflara
-            <strong>pazarlama amacıyla</strong> aktarmayız.
+            EECINE, kullanıcı deneyimini iyileştirmek için çerezler ve benzeri teknolojiler kullanabilir.
+          </p>
+          <p>
+            Çerezler; oturum yönetimi, tercihler, güvenlik doğrulaması ve istatistiksel analiz amaçlıdır.
           </p>
         </section>
 
-        <section id="ucuncu-taraflar" class="section">
+        <section class="section" id="4">
           <h2 class="section-title">
             <span class="section-index">04</span>
-            <span>Üçüncü Taraf Hizmetler</span>
+            <span>Üçüncü Taraf Hizmetleri</span>
           </h2>
-          <p>Uygulama, bazı işlevler için üçüncü taraf hizmetlerden yararlanır:</p>
+          <p>Uygulama, bazı verileri üçüncü taraf sağlayıcılara aktarabilir:</p>
           <ul>
-            <li>
-              <strong>Google Firebase</strong><br />
-              • <em>Firebase Authentication</em>: Hesap oluşturma ve kimlik doğrulama.<br />
-              • <em>Cloud Firestore</em>: Watchlist ve benzeri verilerin güvenli şekilde
-                saklanması.<br />
-              • <em>Firebase Cloud Messaging (FCM)</em>: Bildirimlerin iletilmesi.
-            </li>
-            <li>
-              <strong>The Movie Database (TMDb) API</strong><br />
-              • Film ve dizi bilgileri, posterler ve benzeri içerik TMDb üzerinden
-                alınmaktadır.<br />
-              • TMDb, EECINE uygulamasının sponsoru veya resmi ortağı değildir. TMDb verileri,
-                TMDb’nin kendi kullanım şartları ve gizlilik politikasına tabidir.
-            </li>
+            <li><strong>TMDb API:</strong> Film ve dizi verileri sağlanır (EECINE ile resmi bir ortaklığı yoktur).</li>
+            <li><strong>Google Kimlik Doğrulama:</strong> Kullanıcı girişi için kullanılır.</li>
+            <li><strong>Hata/PERF analiz araçları:</strong> Uygulamanın kararlılığını izlemek için.</li>
           </ul>
-          <p>
-            Bu hizmetler, kendi gizlilik politikalarına göre veri işleyebilir. Detaylı bilgi
-            için ilgili servislerin resmi web sitelerine başvurabilirsiniz.
-          </p>
         </section>
 
-        <section id="saklama-suresi" class="section">
+        <section class="section" id="5">
           <h2 class="section-title">
             <span class="section-index">05</span>
-            <span>Verilerin Saklanma Süresi</span>
+            <span>Veri Saklama Süresi</span>
           </h2>
           <p>
-            Hesabınız aktif olduğu sürece, watchlist ve benzeri uygulama içi verileriniz
-            Firestore üzerinde saklanmaya devam eder.
-          </p>
-          <p>
-            Hesabınızın ve/veya verilerinizin tamamen silinmesini talep etmek isterseniz,
-            <strong>[ILETISIM_EMAILI]</strong> adresi üzerinden bizimle iletişime
-            geçebilirsiniz. Makul süre içerisinde talebiniz değerlendirilerek verileriniz
-            silinir veya anonimleştirilir.
-          </p>
-          <p>
-            Yasal yükümlülüklerimiz gereği bazı kayıtlar, ilgili mevzuatta öngörülen süreler
-            boyunca saklanmaya devam edebilir.
+            Veriler, hizmetin sunulması için gerekli olduğu süre boyunca veya yasal zorunluluklar kapsamında saklanır.
           </p>
         </section>
 
-        <section id="guvenlik" class="section">
+        <section class="section" id="6">
           <h2 class="section-title">
             <span class="section-index">06</span>
-            <span>Güvenlik</span>
+            <span>Veri Güvenliği</span>
           </h2>
           <p>
-            Verileriniz, Firebase altyapısında saklanmakta olup yetkisiz erişime karşı
-            korunması için uygun teknik ve idari tedbirler alınmaktadır. İlgili erişim
-            kontrolleri, yalnızca kimliği doğrulanmış kullanıcılar ve uygulama tarafından
-            yetkilendirilmiş işlemlerle sınırlıdır.
-          </p>
-          <p>
-            Ancak internet üzerinden yapılan hiçbir veri aktarımının veya depolama yönteminin
-            tamamen güvenli olduğu garanti edilemez. Tüm makul önlemleri almaya özen
-            göstermekle birlikte, mutlak güvenlik taahhüdünde bulunamayız.
+            EEDesiqn, kullanıcı verilerini korumak için makul teknik ve idari önlemler alır.
+            Ancak internet üzerinde %100 güvenlik garanti edilemez.
           </p>
         </section>
 
-        <section id="cocuklar" class="section">
+        <section class="section" id="7">
           <h2 class="section-title">
             <span class="section-index">07</span>
-            <span>Çocukların Gizliliği</span>
+            <span>Haklarınız</span>
           </h2>
-          <p>
-            Uygulama, ağırlıklı olarak yetişkin kullanıcıları hedeflemek üzere
-            tasarlanmıştır ve çocuklara yönelik özel bir sürüm sunmamaktadır.
-          </p>
-          <p>
-            Çocuğunuzun izniniz olmadan uygulamayı kullandığını veya kişisel verilerini
-            paylaştığını düşünüyorsanız, lütfen en kısa sürede
-            <strong>[ILETISIM_EMAILI]</strong> adresi üzerinden bizimle iletişime
-            geçin. İlgili hesabın ve verilerin silinmesi için gerekli adımlar atılacaktır.
-          </p>
+          <p>Kullanıcılar aşağıdaki haklara sahiptir:</p>
+          <ul>
+            <li>Kişisel verilerine erişme hakkı</li>
+            <li>Düzeltme talep etme hakkı</li>
+            <li>Verilerinin silinmesini talep etme hakkı</li>
+            <li>Veri işleme faaliyetlerine itiraz etme hakkı</li>
+          </ul>
         </section>
 
-        <section id="degisiklikler" class="section">
+        <section class="section" id="8">
           <h2 class="section-title">
             <span class="section-index">08</span>
-            <span>Bu Politikadaki Değişiklikler</span>
+            <span>Politika Değişiklikleri</span>
           </h2>
           <p>
-            Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm her zaman bu
-            sayfada (<strong>[ALAN_ADIN]/gizlilik-politikasi.html</strong>) yayınlanacaktır.
-          </p>
-          <p>
-            Önemli değişiklikler yapılması halinde, uygun görülen durumlarda uygulama içi
-            bildirim veya e-posta yoluyla da bilgilendirme yapılabilir.
+            Bu Gizlilik Politikası zaman zaman güncellenebilir.
+            En güncel sürüm her zaman
+            <strong>https://www.eedesiqn.online/privacy</strong>
+            adresinde yayınlanacaktır.
           </p>
         </section>
 
-        <section id="iletisim" class="section">
+        <section class="section" id="iletisim">
           <h2 class="section-title">
             <span class="section-index">09</span>
             <span>İletişim</span>
           </h2>
           <p>
-            Bu Gizlilik Politikası ile ilgili her türlü soru, görüş ve talepleriniz için
-            bizimle iletişime geçebilirsiniz:
+            Her türlü soru ve talep için bizimle iletişime geçebilirsiniz:
           </p>
           <p>
-            E-posta: <a href="mailto:[ILETISIM_EMAILI]">[ILETISIM_EMAILI]</a><br />
-            Web: <a href="[ALAN_ADIN]" target="_blank" rel="noopener">[ALAN_ADIN]</a>
+            E-posta: <a href="mailto:eedesiqn@gmail.com">eedesiqn@gmail.com</a><br />
+            Web: <a href="https://www.eedesiqn.online" target="_blank" rel="noopener">www.eedesiqn.online</a>
           </p>
         </section>
+
       </article>
     </div>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <span>© <span id="year"></span> [GELISTIRICI_ADI]. Tüm hakları saklıdır.</span>
-      <span>Bu sayfa sadece bilgilendirme amaçlıdır.</span>
+      <span>© <span id="year"></span> EEDesiqn. Tüm hakları saklıdır.</span>
+      <span>Bu sayfa bilgilendirme amaçlıdır.</span>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
