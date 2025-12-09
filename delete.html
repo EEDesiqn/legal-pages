@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>EECINE – Hesap Silme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="EECINE mobil uygulaması için hesap silme ve veri silme bilgilendirme sayfası." />
+
+  <!-- Ubuntu fontu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #000000;
+      --bg-card: #111111;
+      --text-main: #ffffff;
+      --text-muted: #c2c2c2;
+      --accent: #ffcc00;
+      --border-subtle: rgba(255,255,255,0.08);
+      --max-width: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #1e1e1e 0, #000000 55%);
+      color: var(--text-main);
+      font-family: "Ubuntu", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.8);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.45);
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .pill-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-link {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      background: rgba(10,10,10,0.9);
+    }
+
+    .pill-link--active {
+      border-color: var(--accent);
+      color: black;
+      background: linear-gradient(135deg, #ffcc00, #ffe766);
+      font-weight: 700;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 18px 38px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.02);
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      padding: 22px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
+
+    h1 { font-size: 26px; margin-bottom: 6px; }
+    h2 { font-size: 17px; }
+    p, ul { color: var(--text-muted); font-size: 14px; }
+    ul { padding-left: 18px; }
+    strong { color: white; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 18px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 18px 22px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <img class="brand-logo" src="https://i.ibb.co/RGGH0PL1/eecine-logo.png" alt="EECINE Logo">
+        <div>
+          <div class="brand-text-main">EECINE</div>
+          <div class="brand-text-sub">Film &amp; Dizi Takipçisi</div>
+        </div>
+      </div>
+
+      <nav class="pill-nav">
+        <a class="pill-link" href="/privacy.html">Gizlilik Politikası</a>
+        <a class="pill-link" href="/terms.html">Kullanım Şartları</a>
+        <span class="pill-link pill-link--active">Hesap Silme</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page">
+      <h1>Hesap Silme</h1>
+      <p>
+        Bu sayfa, <strong>EECINE</strong> hesabınızı ve ilişkili verilerinizi nasıl
+        silebileceğinizi açıklar.
+      </p>
+
+      <article class="card">
+
+        <h2>1. Uygulama İçinden Hesap Silme</h2>
+        <p>
+          EECINE uygulamasında oluşturduğunuz hesabı dilediğiniz zaman uygulama içinden silebilirsiniz. Genel adımlar:
+        </p>
+        <ul>
+          <li>Uygulamayı açın ve hesabınıza giriş yapın.</li>
+          <li>Profil veya ayarlar menüsüne gidin.</li>
+          <li><strong>“Hesabı Sil”</strong> veya benzer isimli seçeneği seçin.</li>
+          <li>Gösterilen uyarı ve onay adımlarını takip edin.</li>
+        </ul>
+        <p>
+          İşlem tamamlandığında hesabınız silinir ve uygulamaya giriş yapamazsınız.
+        </p>
+
+        <h2>2. Silinen Veriler</h2>
+        <p>Hesabınızı sildiğinizde aşağıdaki verileriniz kaldırılır:</p>
+        <ul>
+          <li>Hesap kimlik bilgileriniz (e-posta veya kimlik sağlayıcı bilgileri)</li>
+          <li>“İzledim” listeniz</li>
+          <li>“Daha sonra izle” listeniz</li>
+          <li>Verdiğiniz puanlar, notlar ve benzeri kişisel işaretlemeler</li>
+        </ul>
+        <p>
+          Bu veriler geri getirilemez şekilde silinmeye tabi tutulur.
+        </p>
+
+        <h2>3. Uygulamaya Erişemiyorsanız</h2>
+        <p>
+          Cihazınıza erişemiyor veya uygulama içinden hesabınızı silemiyorsanız, aşağıdaki
+          e-posta adresi üzerinden silme talebi gönderebilirsiniz:
+        </p>
+        <p>
+          E-posta:
+          <a href="mailto:support@eedesiqn.online">support@eedesiqn.online</a>
+        </p>
+        <p>
+          Talebinizde, mümkünse uygulamada kullandığınız e-posta adresini ve hangi sağlayıcıyla
+          (Google, e-posta vb.) giriş yaptığınızı belirtmeniz süreci hızlandırır.
+        </p>
+
+        <h2>4. Diğer Haklarınız</h2>
+        <p>
+          Kişisel verilerinizle ilgili erişim, düzeltme veya itiraz gibi talepleriniz için de
+          aynı e-posta adresi üzerinden iletişime geçebilirsiniz.
+        </p>
+        <p>
+          Ayrıntılı bilgi için
+          <a href="/privacy.html">Gizlilik Politikası</a>
+          ve
+          <a href="/terms.html">Kullanım Şartları</a>
+          sayfalarına göz atabilirsiniz.
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> EEDesiqn. Tüm hakları saklıdır.</span>
+      <span>Bilgilendirme amaçlıdır.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
