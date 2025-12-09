@@ -9,55 +9,34 @@
   <!-- Ubuntu fontu -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg-main: #000000;
       --bg-card: #111111;
-      --bg-card-soft: #181818;
       --text-main: #ffffff;
       --text-muted: #c2c2c2;
       --accent: #ffcc00;
-      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255,255,255,0.08);
       --max-width: 860px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
       background: radial-gradient(circle at top, #1e1e1e 0, #000000 55%);
       color: var(--text-main);
-      font-family: "Ubuntu", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Ubuntu", system-ui, sans-serif;
       line-height: 1.6;
     }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(12px);
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+      background: rgba(0,0,0,0.8);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -70,7 +49,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .brand {
@@ -80,11 +58,11 @@
     }
 
     .brand-logo {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff, #ffcc00);
-      box-shadow: 0 0 18px rgba(255, 204, 0, 0.45);
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.45);
     }
 
     .brand-text-main {
@@ -108,23 +86,19 @@
     .pill-link {
       padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255,255,255,0.18);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10,10,10,0.9);
     }
 
     .pill-link--active {
       border-color: var(--accent);
-      color: #000;
+      color: black;
       background: linear-gradient(135deg, #ffcc00, #ffe766);
       font-weight: 700;
-    }
-
-    main {
-      flex: 1;
     }
 
     .page {
@@ -133,88 +107,22 @@
       padding: 22px 18px 38px;
     }
 
-    .page-header {
-      margin-bottom: 18px;
-    }
-
-    .page-kicker {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .page-title {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin: 0 0 6px;
-    }
-
-    .page-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
     .card {
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.02),
-        rgba(255, 255, 255, 0.01)
-      );
+      background: rgba(255,255,255,0.02);
       border-radius: 18px;
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-      padding: 22px 18px 20px;
-      backdrop-filter: blur(18px);
+      padding: 22px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
     }
 
-    .section {
-      margin-top: 18px;
-      padding-top: 10px;
-    }
-
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0 0 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .section-index {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      opacity: 0.9;
-    }
-
-    p {
-      margin: 4px 0 8px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    ul {
-      margin: 4px 0 8px 18px;
-      padding: 0;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    li {
-      margin-bottom: 4px;
-    }
-
-    strong {
-      color: #f3f3f3;
-    }
+    h1 { font-size: 26px; margin-bottom: 6px; }
+    h2 { font-size: 17px; }
+    p, ul { color: var(--text-muted); font-size: 14px; }
+    ul { padding-left: 18px; }
+    strong { color: white; }
 
     footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
       margin-top: 18px;
     }
 
@@ -225,29 +133,23 @@
       font-size: 11px;
       color: var(--text-muted);
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .footer-inner span {
-      opacity: 0.8;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <div class="topbar">
       <div class="brand">
-        <div class="brand-logo" aria-hidden="true"></div>
+        <img class="brand-logo" src="https://i.ibb.co/RGGH0PL1/eecine-logo.png" alt="EECINE Logo">
         <div>
           <div class="brand-text-main">EECINE</div>
           <div class="brand-text-sub">Film &amp; Dizi Takipçisi</div>
         </div>
       </div>
-      <nav class="pill-nav" aria-label="Sayfa gezinme">
+
+      <nav class="pill-nav">
         <span class="pill-link pill-link--active">Gizlilik Politikası</span>
         <a class="pill-link" href="/terms.html">Kullanım Şartları</a>
       </nav>
@@ -256,147 +158,35 @@
 
   <main>
     <div class="page">
-      <header class="page-header">
-        <div class="page-kicker">Gizlilik &amp; Koruma</div>
-        <h1 class="page-title">Gizlilik Politikası</h1>
-        <div class="page-meta">
-          <span>Uygulama: <strong>EECINE</strong></span><br />
-          <span>Geliştirici: <strong>EEDesiqn</strong></span><br />
-        </div>
-      </header>
+      <h1>Gizlilik Politikası</h1>
+      <p><strong>EECINE</strong>, kullanıcı gizliliğini önemser. Bu politika, verilerin nasıl toplandığını ve kullanıldığını açıklar.</p>
 
       <article class="card">
 
-        <section class="section" id="1">
-          <h2 class="section-title">
-            <span class="section-index">01</span>
-            <span>Toplanan Bilgiler</span>
-          </h2>
-          <p>EECINE, kullanıcı deneyimini geliştirmek ve hizmeti sağlayabilmek için bazı verileri toplar.</p>
-          <ul>
-            <li><strong>Hesap bilgileri:</strong> Google hesabı veya e-posta ile giriş bilgileri</li>
-            <li><strong>Cihaz bilgileri:</strong> cihaz modeli, işletim sistemi, uygulama sürümü</li>
-            <li><strong>Kullanım verileri:</strong> favori filmleriniz, izleme listeleri, uygulama içinde gezinti</li>
-            <li><strong>IP ve teknik bilgiler:</strong> güvenlik, hata ayıklama ve analitik amaçlı</li>
-          </ul>
-        </section>
+        <h2>1. Toplanan Bilgiler</h2>
+        <ul>
+          <li>Google hesabı veya e-posta ile giriş bilgileri</li>
+          <li>Cihaz bilgileri (model, işletim sistemi, sürüm)</li>
+          <li>Uygulama kullanım verileri</li>
+          <li>IP adresi ve teknik veriler</li>
+        </ul>
 
-        <section class="section" id="2">
-          <h2 class="section-title">
-            <span class="section-index">02</span>
-            <span>Verilerin Kullanım Amaçları</span>
-          </h2>
-          <p>Toplanan veriler aşağıdaki amaçlarla kullanılır:</p>
-          <ul>
-            <li>Uygulamanın doğru şekilde çalışmasını sağlamak</li>
-            <li>Kullanıcıya kişiselleştirilmiş içerik göstermek</li>
-            <li>Geliştirme, güvenlik ve hata ayıklama süreçlerini yürütmek</li>
-            <li>Kullanıcı desteği sağlamak</li>
-          </ul>
-        </section>
+        <h2>2. Kullanım Amaçları</h2>
+        <ul>
+          <li>Uygulamanın doğru çalışması</li>
+          <li>Kişiselleştirilmiş içerik sunulması</li>
+          <li>Hata ayıklama ve geliştirme</li>
+          <li>Kullanıcı desteği</li>
+        </ul>
 
-        <section class="section" id="3">
-          <h2 class="section-title">
-            <span class="section-index">03</span>
-            <span>Çerezler ve Benzeri Teknolojiler</span>
-          </h2>
-          <p>
-            EECINE, kullanıcı deneyimini iyileştirmek için çerezler ve benzeri teknolojiler kullanabilir.
-          </p>
-          <p>
-            Çerezler; oturum yönetimi, tercihler, güvenlik doğrulaması ve istatistiksel analiz amaçlıdır.
-          </p>
-        </section>
+        <h2>3. Çerezler</h2>
+        <p>Deneyimi iyileştirmek için çerezler kullanılabilir.</p>
 
-        <section class="section" id="4">
-          <h2 class="section-title">
-            <span class="section-index">04</span>
-            <span>Üçüncü Taraf Hizmetleri</span>
-          </h2>
-          <p>Uygulama, bazı verileri üçüncü taraf sağlayıcılara aktarabilir:</p>
-          <ul>
-            <li><strong>TMDb API:</strong> Film ve dizi verileri sağlanır (EECINE ile resmi bir ortaklığı yoktur).</li>
-            <li><strong>Google Kimlik Doğrulama:</strong> Kullanıcı girişi için kullanılır.</li>
-            <li><strong>Hata/PERF analiz araçları:</strong> Uygulamanın kararlılığını izlemek için.</li>
-          </ul>
-        </section>
+        <h2>4. Üçüncü Taraf Hizmetleri</h2>
+        <ul>
+          <li>TMDb API — film & dizi verileri sağlar</li>
+          <li>Google kimlik doğrulama — giriş için</li>
+          <li>Performans ve hata analiz araçları</li>
+        </ul>
 
-        <section class="section" id="5">
-          <h2 class="section-title">
-            <span class="section-index">05</span>
-            <span>Veri Saklama Süresi</span>
-          </h2>
-          <p>
-            Veriler, hizmetin sunulması için gerekli olduğu süre boyunca veya yasal zorunluluklar kapsamında saklanır.
-          </p>
-        </section>
-
-        <section class="section" id="6">
-          <h2 class="section-title">
-            <span class="section-index">06</span>
-            <span>Veri Güvenliği</span>
-          </h2>
-          <p>
-            EEDesiqn, kullanıcı verilerini korumak için makul teknik ve idari önlemler alır.
-            Ancak internet üzerinde %100 güvenlik garanti edilemez.
-          </p>
-        </section>
-
-        <section class="section" id="7">
-          <h2 class="section-title">
-            <span class="section-index">07</span>
-            <span>Haklarınız</span>
-          </h2>
-          <p>Kullanıcılar aşağıdaki haklara sahiptir:</p>
-          <ul>
-            <li>Kişisel verilerine erişme hakkı</li>
-            <li>Düzeltme talep etme hakkı</li>
-            <li>Verilerinin silinmesini talep etme hakkı</li>
-            <li>Veri işleme faaliyetlerine itiraz etme hakkı</li>
-          </ul>
-        </section>
-
-        <section class="section" id="8">
-          <h2 class="section-title">
-            <span class="section-index">08</span>
-            <span>Politika Değişiklikleri</span>
-          </h2>
-          <p>
-            Bu Gizlilik Politikası zaman zaman güncellenebilir.
-            En güncel sürüm her zaman
-            <strong>https://www.eedesiqn.online/privacy</strong>
-            adresinde yayınlanacaktır.
-          </p>
-        </section>
-
-        <section class="section" id="iletisim">
-          <h2 class="section-title">
-            <span class="section-index">09</span>
-            <span>İletişim</span>
-          </h2>
-          <p>
-            Her türlü soru ve talep için bizimle iletişime geçebilirsiniz:
-          </p>
-          <p>
-            E-posta: <a href="mailto:eedesiqn@gmail.com">eedesiqn@gmail.com</a><br />
-            Web: <a href="https://www.eedesiqn.online" target="_blank" rel="noopener">www.eedesiqn.online</a>
-          </p>
-        </section>
-
-      </article>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <span>© <span id="year"></span> EEDesiqn. Tüm hakları saklıdır.</span>
-      <span>Bu sayfa bilgilendirme amaçlıdır.</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+        <h2>5. Veri S
