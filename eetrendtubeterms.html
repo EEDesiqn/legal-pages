@@ -8,153 +8,312 @@
 
   <style>
     :root{
-      --bg:#0f0f10;
-      --card:#18181b;
-      --text:#f4f4f5;
+      --bg:#0b0c10;
+      --card:#12131a;
+      --text:#f8fafc;
       --muted:#a1a1aa;
+      --muted2:#cbd5e1;
       --accent:#ff0000;
       --border:rgba(255,255,255,.10);
-      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
       --radius:18px;
-      --max: 920px;
+      --max: 980px;
     }
     @media (prefers-color-scheme: light){
       :root{
-        --bg:#f3f4f6;
+        --bg:#f5f7fb;
         --card:#ffffff;
-        --text:#111827;
-        --muted:#4b5563;
-        --border:rgba(17,24,39,.12);
-        --shadow: 0 12px 30px rgba(0,0,0,.08);
+        --text:#0f172a;
+        --muted:#475569;
+        --muted2:#334155;
+        --border:rgba(15,23,42,.12);
+        --shadow: 0 14px 40px rgba(2,6,23,.10);
       }
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,0,0,.14), transparent 55%),
-                  radial-gradient(900px 500px at 95% 0%, rgba(59,130,246,.12), transparent 45%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 650px at 18% -12%, rgba(255,0,0,.14), transparent 55%),
+        radial-gradient(900px 520px at 96% 0%, rgba(59,130,246,.12), transparent 45%),
+        var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    a{color:inherit; text-underline-offset:3px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 68px}
+
+    /* Top Card */
     .header{
-      display:flex; gap:14px; align-items:center;
-      padding:18px; border:1px solid var(--border); border-radius:var(--radius);
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap:18px;
+      padding:20px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
     }
+    @media (max-width: 680px){
+      .header{grid-template-columns: 1fr; text-align:center}
+    }
+
+    /* Brand block (logo + slogan) */
+    .brand{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
+      padding:10px 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 680px){
+      .brand{align-items:center}
+    }
+
     .logo{
-      width:58px; height:58px; border-radius:14px; overflow:hidden;
-      border:1px solid var(--border); flex:0 0 auto; background:#000;
+      width:72px; height:72px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#000;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
     }
     .logo img{width:100%; height:100%; object-fit:cover; display:block}
-    h1{margin:0; font-size:20px}
-    .sub{margin:4px 0 0; color:var(--muted); font-size:13px}
+
+    .slogan{
+      margin:0;
+      font-size:13px;
+      color:var(--muted2);
+      line-height:1.45;
+    }
+
+    /* Title block */
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      padding:6px 0;
+    }
+    .title h1{
+      margin:0;
+      font-size: clamp(18px, 2.3vw, 24px);
+      letter-spacing: .2px;
+    }
+    .title p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      max-width: 76ch;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
+      align-items:center;
+    }
+    @media (max-width: 680px){
+      .meta{justify-content:center}
+    }
+
     .badge{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       font-size:12px;
       color:#fff;
-      background: rgba(255,0,0,.85);
-      padding:4px 10px;
+      background: rgba(255,0,0,.88);
+      padding:6px 12px;
       border-radius:999px;
-      margin-top:10px;
+      border:1px solid rgba(255,255,255,.18);
     }
-    .nav{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted)}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:var(--muted2);
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Nav */
+    .nav{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+    }
+    @media (max-width: 680px){
+      .nav{justify-content:center}
+    }
     .pill{
       display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px; border-radius:999px;
+      padding:9px 12px; border-radius:999px;
       border:1px solid var(--border);
       background: rgba(255,255,255,.04);
       text-decoration:none;
-      color:inherit;
+      transition: transform .12s ease, background .12s ease;
     }
+    .pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
+
+    /* Content Card */
     .content{
       margin-top:16px;
-      padding:18px;
+      padding:22px;
       border:1px solid var(--border);
       border-radius:var(--radius);
       background: var(--card);
       box-shadow: var(--shadow);
     }
-    h2{margin:18px 0 8px; font-size:16px}
-    ul{margin:8px 0 0 18px}
-    a{color:inherit}
+
+    .toc{
+      margin:0 0 16px;
+      padding:16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .toc-title{
+      margin:0 0 8px;
+      font-size:13px;
+      color:var(--muted2);
+      letter-spacing:.2px;
+    }
+    .toc a{color: var(--muted2); text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+    .toc ol{margin:0; padding-left:18px; color:var(--muted2)}
+    .toc li{margin:6px 0}
+
+    h2{
+      margin:22px 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    p{margin:10px 0}
+    ul{margin:10px 0 0 18px}
+    li{margin:8px 0}
     .muted{color:var(--muted)}
+    .footer{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="header">
-      <div class="logo" aria-hidden="true">
-        <img src="https://i.ibb.co/4wKmsjqR/logopng.jpg" alt="EE TrendTube Logo" />
+    <div class="header" role="banner">
+      <!-- Sol: Logo + Slogan -->
+      <div class="brand" aria-label="Uygulama markası">
+        <div class="logo" aria-hidden="true">
+          <img src="https://i.ibb.co/Q3vxL9Q9/logopng.png" alt="EE TrendTube Logo" />
+        </div>
+        <p class="slogan"><b>YouTube Gündem Asistanı</b></p>
       </div>
-      <div>
+
+      <!-- Sağ: Sayfa başlığı -->
+      <div class="title">
         <h1>EE TrendTube – Kullanım Şartları</h1>
-        <p class="sub">Uygulamayı kullanarak bu şartları kabul etmiş olursunuz.</p>
-        <span class="badge">Son güncelleme: 15 Aralık 2025</span>
+        <p>Uygulamayı kullanarak bu Kullanım Şartları’nı kabul etmiş olursunuz.</p>
+        <div class="meta">
+          <span class="badge">Son güncelleme: 15 Aralık 2025</span>
+          <span class="chip">Sürüm: 1.0</span>
+        </div>
       </div>
     </div>
 
-    <div class="nav">
-      <a class="pill" href="https://eetrendtubeprivacy.eedesiqn.online/" rel="noopener">Gizlilik Politikası</a>
+    <div class="nav" aria-label="Kısa bağlantılar">
+      <a class="pill" href="https://eedesiqn.online/eetrendtubeprivacy" rel="noopener">Gizlilik Politikası</a>
       <a class="pill" href="#iletisim">İletişim</a>
     </div>
 
-    <div class="content">
-      <h2>1) Tanımlar</h2>
+    <div class="content" role="main">
+      <div class="toc" aria-label="İçindekiler">
+        <p class="toc-title">İçindekiler</p>
+        <ol>
+          <li><a href="#tanimlar">Tanımlar</a></li>
+          <li><a href="#kabul">Kabul</a></li>
+          <li><a href="#kosullar">Kullanım Koşulları</a></li>
+          <li><a href="#ucuncu">Üçüncü Taraf Servisler</a></li>
+          <li><a href="#sorumluluk">Sorumluluk Reddi</a></li>
+          <li><a href="#degisiklik">Değişiklikler</a></li>
+          <li><a href="#fesih">Fesih</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ol>
+      </div>
+
+      <h2 id="tanimlar">1) Tanımlar</h2>
       <ul>
         <li><b>Uygulama:</b> EE TrendTube mobil uygulaması</li>
         <li><b>Kullanıcı:</b> Uygulamayı kullanan kişi</li>
-        <li><b>Hizmet:</b> Film &amp; dizi takip özellikleri</li>
+        <li><b>Hizmet:</b> YouTube gündem/trend içeriklerini takip ve görüntüleme</li>
       </ul>
 
-      <h2>2) Kabul</h2>
+      <h2 id="kabul">2) Kabul</h2>
       <p>
         Uygulamayı indirerek veya kullanarak bu Kullanım Şartları’nı kabul etmiş sayılırsınız.
         Şartları kabul etmiyorsanız uygulamayı kullanmayın.
       </p>
 
-      <h2>3) Kullanım Koşulları</h2>
+      <h2 id="kosullar">3) Kullanım Koşulları</h2>
       <ul>
         <li>Uygulamayı yürürlükteki yasalara uygun şekilde kullanmalısınız.</li>
         <li>Uygulamanın çalışmasını engelleyecek veya zarar verecek eylemlerden kaçınmalısınız.</li>
         <li>Uygulama içinde/üzerinden üçüncü taraf içeriklerine yönlendirmeler olabilir; bu içerikler üçüncü tarafların sorumluluğundadır.</li>
       </ul>
 
-      <h2>4) Üçüncü Taraf Servisler</h2>
+      <h2 id="ucuncu">4) Üçüncü Taraf Servisler</h2>
       <p>
         Uygulama, bazı özellikler için üçüncü taraf servislerle iletişim kurabilir.
         Bu servislerin kullanımı, ilgili servislerin kendi şart ve politikalarına tabidir.
       </p>
+      <p class="muted">
+        Not: Uygulama, YouTube / Google ile bağlantılı olabilir; ancak ilgili platformların resmi hizmet şartları ve gizlilik politikaları esas alınır.
+      </p>
 
-      <h2>5) Sorumluluk Reddi</h2>
+      <h2 id="sorumluluk">5) Sorumluluk Reddi</h2>
       <p>
         Uygulama “olduğu gibi” sunulur. Kesintisiz/hatasız çalışma garantisi verilmez.
         İçeriklerin doğruluğu, güncelliği veya erişilebilirliği konusunda garanti yoktur.
       </p>
 
-      <h2>6) Değişiklikler</h2>
+      <h2 id="degisiklik">6) Değişiklikler</h2>
       <p>
         Bu şartlar zaman zaman güncellenebilir. Güncel sürüm bu sayfada yayınlanır.
       </p>
 
-      <h2>7) Fesih</h2>
+      <h2 id="fesih">7) Fesih</h2>
       <p>
         Şartlara aykırı kullanım tespit edilirse, uygulamaya erişiminiz sınırlandırılabilir veya engellenebilir.
       </p>
 
       <h2 id="iletisim">8) İletişim</h2>
       <p>
+        <b>Uygulama:</b> EE TrendTube<br/>
+        <b>Slogan:</b> YouTube Gündem Asistanı<br/>
         <b>E-posta:</b> <a href="mailto:eedesiqn@gmail.com">eedesiqn@gmail.com</a><br/>
         <b>Web:</b> <a href="https://www.eedesiqn.online" target="_blank" rel="noopener">www.eedesiqn.online</a>
       </p>
 
-      <p class="muted">
+      <div class="footer">
         Not: EE TrendTube, üçüncü taraf markalar/platformlarla (ör. YouTube/Google) doğrudan ilişkili veya bağlı olduğunu iddia etmez.
-      </p>
+      </div>
     </div>
   </div>
 </body>
